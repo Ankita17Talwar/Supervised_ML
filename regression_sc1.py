@@ -38,7 +38,13 @@ plt.scatter(X_rooms, y, color='blue')
 plt.plot(prediction_space, reg.predict(prediction_space), color='black', linewidth=3)
 plt.show()
 
+# Lasso feature selection
+from sklearn.linear_model import Lasso
 
-## Example2 fit a linear regression and predict life expectancy using just one feature :
-## use the 'fertility' feature of dataset ;
-# goal is to predict life expectancy, the target variable here is 'life'
+names = boston.drop('MEDV', axis=1).columns
+lasso = Lasso(alpha=0.1)
+lasso_coef = lasso.fit(X, y).coef_
+_ = plt.plot(range(len(names)), lasso_coef)
+_ = plt.xticks(range(len(names)), names, rotation =60)
+_ = plt.ylabel('Coefficients')
+plt.show()
