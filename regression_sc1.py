@@ -37,3 +37,8 @@ prediction_space = np.linspace(min(X_rooms), max(X_rooms)).reshape(-1,1)
 plt.scatter(X_rooms, y, color='blue')
 plt.plot(prediction_space, reg.predict(prediction_space), color='black', linewidth=3)
 plt.show()
+
+
+## Example2 fit a linear regression and predict life expectancy using just one feature :
+## use the 'fertility' feature of dataset ;
+# goal is to predict life expectancy, the target variable here is 'life'
