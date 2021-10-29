@@ -27,3 +27,12 @@ logistic regression has a
 2) C controls the inverse of the regularization strength
 
 we create a hold-out set, tune the 'C' and 'penalty' hyperparameters of a logistic regression classifier using GridSearchCV on the training set. Dataset used is Diabetes.csv
+
+
+# HoldOut_Regression
+Lasso use L1 penalty to regularize, while ridge use the L2 penalty. There is another type of regularized regression known as the elastic net. In elastic net regularization, the penalty term is a linear combination of the  L1 and  L2 penalties:
+                                             a* L1 + b*L2
+
+In scikit-learn, this term is represented by the 'l1_ratio' parameter: An 'l1_ratio' of 1 corresponds to an L1 penalty, and anything lower is a combination of L1 and L2 .
+
+In this exercise, we will use GridSearchCV to tune the 'l1_ratio' of an elastic net model trained on the  data.
