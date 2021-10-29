@@ -1,10 +1,11 @@
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import confusion_matrix, classification_report
 from sklearn.metrics import roc_curve
 import matplotlib.pyplot as plt
 from sklearn.metrics import roc_auc_score
+
 
 # Import Data
 df = pd.read_csv('data/diabetes.csv')
@@ -47,3 +48,6 @@ plt.show()
 
 # Note : Larger Area under ROC curve = better model
 print(roc_auc_score(y_test, y_pred_prob))
+
+# AUC using cross validation
+cv_score = cross_val_score(logreg, X, y, cv=5, scoring='roc_auc')
