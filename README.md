@@ -16,3 +16,6 @@ Hyperparameter Tuning with GridSearchCV : Logistic Regression
 Note : GridSearchCV can be computationally expensive, especially if you are searching over a large hyperparameter space and dealing with multiple hyperparameters. Solution is to use RandomSearchCV , in which not all hyperparameter values are tried out. Instead, a fixed number of hyperparameter settings is sampled from specified probability distributions.
 
 # RandomSearchCV
+Note: Note that RandomizedSearchCV will never outperform GridSearchCV. Instead, it is valuable because it saves on computation time.
+
+We perform RandomSeacrch CV for tuning Decisiontree parameter
