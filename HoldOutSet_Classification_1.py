@@ -20,7 +20,11 @@ c_space = np.logspace(-5, 8, 15)
 param_grid = {'C': c_space, 'penalty': ['l1', 'l2']}
 
 # Instantiate the logistic regression classifier: logreg
-logreg = LogisticRegression()
+logreg = LogisticRegression(max_iter=400, solver='liblinear')
+
+# solver : {‘newton-cg’, ‘lbfgs’, ‘liblinear’, ‘sag’, ‘saga’}, default=’lbfgs’
+# ‘newton-cg’, ‘lbfgs’, ‘sag’ and ‘saga’ handle L2 or no penalty
+# ‘liblinear’ and ‘saga’ also handle L1 penalty
 
 # Create train and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)
