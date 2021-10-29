@@ -13,3 +13,6 @@ The goal is to predict whether or not a given female patient will contract diabe
 Hyperparameter Tuning with GridSearchCV : Logistic Regression
  logistic regression also has a regularization parameter:C . C controls the inverse of the regularization strength. In this script we tune C.
  A large C can lead to an overfit model, while a small C can lead to an underfit model.
+Note : GridSearchCV can be computationally expensive, especially if you are searching over a large hyperparameter space and dealing with multiple hyperparameters. Solution is to use RandomSearchCV , in which not all hyperparameter values are tried out. Instead, a fixed number of hyperparameter settings is sampled from specified probability distributions.
+
+# RandomSearchCV
