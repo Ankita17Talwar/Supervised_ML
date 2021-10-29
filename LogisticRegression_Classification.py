@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, classification_report
 from sklearn.metrics import roc_curve
 import matplotlib.pyplot as plt
+from sklearn.metrics import roc_auc_score
 
 # Import Data
 df = pd.read_csv('data/diabetes.csv')
@@ -40,6 +41,9 @@ fpr, tpr, thresholds = roc_curve(y_test, y_pred_prob)
 plt.plot([0, 1], [0, 1], 'k--')
 plt.plot(fpr, tpr)
 plt.xlabel('False Positive Rate')
-plt.ylabel('True Positive Rate')
+plt.ylabel('True Positive Rate')  # Recall
 plt.title('ROC Curve')
 plt.show()
+
+# Note : Larger Area under ROC curve = better model
+print(roc_auc_score(y_test, y_pred_prob))
